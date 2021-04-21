@@ -93,6 +93,11 @@ router.post('/Login', function (req, res) {
 
 });
 
+router.get('/getUser',function (req,res){
+    db.model('users',user).find({},function (err,users) {
+        res.send(users);
+    })
+})
 
 router.get('/deleteUsers/:id',function (req,res) {
 
